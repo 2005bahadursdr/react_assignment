@@ -102,7 +102,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>Design from ui/ux agency 2026</p>
+        <p> ©2026 Elementum. All rights reserved</p>
       </div>
     </footer>
   );
