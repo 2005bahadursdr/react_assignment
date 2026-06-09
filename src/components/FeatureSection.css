@@ -1,0 +1,140 @@
+.feature-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 24px;
+  gap: 60px;
+}
+
+.feature-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-text {
+  flex: 1;
+  max-width: 450px;
+}
+
+.feature-title {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.feature-subtitle {
+  font-size: 16px;
+  color: var(--color-text);
+  margin-bottom: 30px;
+}
+
+.feature-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.feature-link .line {
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  background-color: var(--color-primary);
+  margin-left: 10px;
+}
+
+.feature-image-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-image-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Image Shapes */
+.shape-circle {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+
+.shape-semi-circle {
+  width: 400px;
+  height: 400px;
+  border-radius: 50% 50% 50% 50%; /* Just circle for now, maybe tweak border-radius if needed */
+  clip-path: circle(50% at 50% 50%);
+}
+
+/* Decorative Elements */
+.decor-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid var(--color-accent-red);
+  transform: rotate(15deg);
+  z-index: 1;
+}
+
+.decor-square {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-accent-red);
+  transform: rotate(25deg);
+  z-index: 1;
+}
+
+.decor-line {
+  position: absolute;
+  z-index: 0;
+}
+
+@media (max-width: 992px) {
+  .feature-section, .feature-section.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 60px 24px;
+  }
+
+  .feature-text {
+    max-width: 100%;
+  }
+
+  .shape-circle, .shape-semi-circle {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .decor-triangle, .decor-square {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-title { font-size: 28px; }
+  .feature-subtitle { font-size: 15px; }
+  
+  .shape-circle, .shape-semi-circle {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+}

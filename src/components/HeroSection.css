@@ -1,0 +1,137 @@
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 0 140px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  color: var(--color-text);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.hero-avatars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.avatar-img {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border: 4px solid white;
+}
+
+/* Make some avatars smaller/larger to add depth */
+.avatar-img:nth-child(2), .avatar-img:nth-child(5) {
+  width: 80px;
+  height: 80px;
+}
+
+.avatar-img:nth-child(3), .avatar-img:nth-child(6) {
+  width: 45px;
+  height: 45px;
+}
+
+/* Shapes */
+.pulse-glow {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  transform: translateY(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255, 150, 130, 0.5) 0%, transparent 60%);
+  border-radius: 50%;
+  z-index: -2;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+}
+
+.shape-purple {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent-purple);
+  border-radius: 0 50px 50px 0; /* Semi circle */
+  top: 15%;
+  right: 10%;
+  transform: rotate(-45deg);
+}
+
+.shape-squiggle {
+  top: 10%;
+  left: -20px;
+}
+
+@media (max-width: 992px) {
+  .hero-title { font-size: 56px; }
+  .pulse-glow { width: 500px; height: 500px; }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+  }
+  
+  .hero {
+    padding: 60px 0 80px;
+    min-height: auto;
+  }
+  
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .avatar-img {
+    display: none; /* Hide avatars on very small screens for cleaner look */
+  }
+  
+  .shape-purple, .shape-squiggle {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+  }
+  .pulse-glow {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+  }
+}

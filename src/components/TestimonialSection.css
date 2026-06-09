@@ -1,0 +1,133 @@
+.testimonial-section {
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.testimonial-title {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 60px;
+}
+
+.testimonial-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.quote-box {
+  position: relative;
+  background-color: #f8fbf9;
+  border-radius: 20px;
+  padding: 50px 60px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  z-index: 2;
+}
+
+.quote-box p {
+  font-size: 16px;
+  color: var(--color-text);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.quote-mark {
+  position: absolute;
+  font-size: 60px;
+  color: #ccc;
+  font-family: serif;
+  line-height: 1;
+}
+
+.quote-mark.left {
+  top: 20px;
+  left: 20px;
+}
+
+.quote-mark.right {
+  bottom: 0px;
+  right: 20px;
+}
+
+.testimonial-avatars {
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  right: -100px;
+  bottom: -50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.testimonial-avatar-img {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 3px solid white;
+}
+
+.testimonial-avatar-img:nth-child(1), .testimonial-avatar-img:nth-child(4) {
+  width: 70px;
+  height: 70px;
+}
+
+.testimonial-avatar-img:nth-child(3), .testimonial-avatar-img:nth-child(5) {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 992px) {
+  .testimonial-section {
+    padding: 80px 24px;
+  }
+
+  .testimonial-content {
+    padding: 20px 0;
+  }
+  
+  .testimonial-avatars {
+    display: none; /* Hide floating avatars on small screens */
+  }
+
+  .quote-box {
+    padding: 40px 30px;
+  }
+  
+  .testimonial-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-box {
+    padding: 30px 20px;
+  }
+  
+  .testimonial-title {
+    font-size: 28px;
+  }
+  
+  .quote-box p {
+    font-size: 15px;
+  }
+  
+  .quote-mark {
+    font-size: 40px;
+  }
+  
+  .quote-mark.left {
+    top: 10px;
+    left: 10px;
+  }
+
+  .quote-mark.right {
+    bottom: -10px;
+    right: 10px;
+  }
+}
